@@ -8,7 +8,7 @@
     <string name="textview2">TextView</string>
     <string name="cancelar">Cancelar</string>
     <string name="boasVindas">Seja bem vindo!</string>
-    <string name="ok">ok</string>
+    <string name="ok">OK</string>
     <string name="msgOtimo">Otimo!</string>
     <string name="msgDialog">Gostaria de uma xícara de café?</string>
     <string name="msgTitle">Pergunta Importante!</string>
@@ -17,7 +17,7 @@
     <string name="invalido">Invalido!</string>
     <string name="cadastro">Cadastro</string>
     <string name="nome">Nome</string>
-    <string name="digiteAlgo">Digite Algo...</string>
+    <string name="digiteAlgo">Digite Algo.</string>
     <string name="autor">Autor</string>
     <string name="ano">Ano</string>
     <string name="nota">Nota</string>
@@ -26,4 +26,5 @@
     <string name="anterior">Anterior</string>
     <string name="proximo">Proximo</string>
     <string name="textview">TextView</string>
+    <string name="cadastrado">Cadastrado</string>
 </resources>

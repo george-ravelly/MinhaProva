@@ -25,7 +25,6 @@ class MainActivity : AppCompatActivity() {
         msgBoasVindas()
         manterTexto()
         binding.apply {
-            textView3.text
             button1.setOnClickListener {
                 val i = Intent(applicationContext, Acao1Activity::class.java)
                 startActivityForResult(i, requestCode)
@@ -50,6 +49,7 @@ class MainActivity : AppCompatActivity() {
 
     fun manterTexto(){
         binding.textView3.text = viewmodel.texto1
+        binding.textView4.text = viewmodel.texto2
     }
 
     private fun msgBoasVindas() {
@@ -63,13 +63,26 @@ class MainActivity : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when(requestCode){
-            this.requestCode -> {
+            0 -> {
                 when (resultCode) {
                     Activity.RESULT_OK -> {
                         viewmodel.texto1 = data?.getStringExtra("texto1").toString()
                         binding.textView3.text = viewmodel.texto1
                     }
                     Activity.RESULT_CANCELED -> {
+                        Snackbar.make(binding.mainlayout, "Cancelado", Snackbar.LENGTH_LONG)
+                            .setAction("cancelar") {
+                                Toast.makeText(this, R.string.cancelar, Toast.LENGTH_SHORT).show()
+                            }.show()
+                    }
+                }
+            }1 -> {
+                when (resultCode) {
+                        Activity.RESULT_OK -> {
+                        viewmodel.texto2 = "Cadastrado!"
+                        binding.textView4.text = viewmodel.texto2
+                    }
+                        Activity.RESULT_CANCELED -> {
                         Snackbar.make(binding.mainlayout, "Cancelado", Snackbar.LENGTH_LONG)
                             .setAction("cancelar") {
                                 Toast.makeText(this, R.string.cancelar, Toast.LENGTH_SHORT).show()

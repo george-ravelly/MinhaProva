@@ -1,5 +1,6 @@
 package curso.tads.minhaprova
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,13 +26,13 @@ class Acao2Activity : AppCompatActivity() {
                     livro.ano = Integer.parseInt(ano.text.toString())
                     livro.nota = ratingBar2.rating
                     db.insert(livro)
-                    startActivity(i)
+                    setResult(Activity.RESULT_OK, i)
                     finish()
                 }
             }
             cancelar.setOnClickListener {
                 Toast.makeText(applicationContext, R.string.msgCancelar, Toast.LENGTH_SHORT).show()
-                startActivity(i)
+                setResult(Activity.RESULT_CANCELED)
                 finish()
             }
         }
