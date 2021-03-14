@@ -17,7 +17,6 @@ class Acao1Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_acao1)
         viewmodel = ViewModelProvider(this).get(Action1ViewModel::class.java)
-        viewmodel.texto
         binding.apply {
             ok.setOnClickListener {
                 val i = Intent(applicationContext, MainActivity::class.java)
